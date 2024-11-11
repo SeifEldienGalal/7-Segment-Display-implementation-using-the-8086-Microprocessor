@@ -1,0 +1,114 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+7seg.bin -- emu8086 assembler version: 4.08  
+ 
+[ 12/20/2023  --  6:36:57 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ;codewithshamse
+[   2]        :                                       ;7 segment display Interfacing program
+[   3]        :                                       
+[   4]        :                                       DATA SEGMENT
+[   5]        :                                       PORTA EQU 00H
+[   6]        :                                       PORTB EQU 02H
+[   7]        :                                       PORTC EQU 04H
+[   8]        :                                       PORT_CON EQU 06H
+[   9]        :                                       DATA ENDS
+[  10]        :                                       CODE SEGMENT
+[  11]    0005: BA 06 00                              MOV AX,DATA
+[  12]    0008: B0 80                                 MOV DS, AX
+[  13]        :                                       
+[  14]        :                                       ORG 0000H
+[  15]    0005:                                       START:
+[  16]        :                                       
+[  17]    0005: BA 06 00                              MOV DX, PORT_CON
+[  18]    0008: B0 80                                 MOV AL, 10000000B
+[  19]    000A: EE                                    OUT DX, AL
+[  20]        :                                       
+[  21]        :                                       
+[  22]    000B: EB 00                                 JMP XX
+[  23]        :                                       
+[  24]    000D:                                       XX:
+[  25]        :                                       
+[  26]    000D: B0 3F                                 MOV AL, 00111111B ; displaying 0
+[  27]    000F: BA 00 00                              MOV DX, PORTA
+[  28]    0012: EE                                    OUT DX,AL
+[  29]    0013: B9 36 DF                              MOV CX,0DF36H; Delay
+[  30]    0016: E2 FE                                 Delay0:loop Delay0
+[  31]        :                                       
+[  32]    0018: B0 06                                 MOV AL, 00000110B  ; Displaying 1
+[  33]    001A: BA 00 00                              MOV DX, PORTA
+[  34]    001D: EE                                    OUT DX,AL
+[  35]    001E: B9 36 DF                              MOV CX,0DF36H; Delay
+[  36]    0021: E2 FE                                 Delay1:loop Delay1
+[  37]        :                                       
+[  38]    0023: B0 5B                                 MOV AL, 01011011B  ;Displaying 2
+[  39]    0025: BA 00 00                              MOV DX, PORTA
+[  40]    0028: EE                                    OUT DX,AL
+[  41]    0029: B9 36 DF                              MOV CX,0DF36H; Delay
+[  42]    002C: E2 FE                                 Delay2:loop Delay2
+[  43]        :                                       
+[  44]    002E: B0 4F                                 MOV AL, 01001111B  ; Displaying 3
+[  45]    0030: BA 00 00                              MOV DX, PORTA
+[  46]    0033: EE                                    OUT DX,AL
+[  47]    0034: B9 36 DF                              MOV CX,0DF36H; Delay
+[  48]    0037: E2 FE                                 Delay3:loop Delay3
+[  49]        :                                       
+[  50]    0039: B0 66                                 MOV AL, 01100110B  ; Displaying 4
+[  51]    003B: BA 00 00                              MOV DX, PORTA
+[  52]    003E: EE                                    OUT DX,AL
+[  53]    003F: B9 36 DF                              MOV CX,0DF36H; Delay
+[  54]    0042: E2 FE                                 Delay4:loop Delay4
+[  55]        :                                       
+[  56]    0044: B0 6D                                 MOV AL, 01101101B    ;Displaying 5
+[  57]    0046: BA 00 00                              MOV DX, PORTA
+[  58]    0049: EE                                    OUT DX,AL
+[  59]    004A: B9 36 DF                              MOV CX,0DF36H; Delay
+[  60]    004D: E2 FE                                 Delay5:loop Delay5
+[  61]        :                                       
+[  62]    004F: B0 7D                                 MOV AL, 01111101B  ;Displaying 6
+[  63]    0051: BA 00 00                              MOV DX, PORTA
+[  64]    0054: EE                                    OUT DX,AL
+[  65]    0055: B9 36 DF                              MOV CX,0DF36H; Delay
+[  66]    0058: E2 FE                                 Delay6:loop Delay6
+[  67]        :                                       
+[  68]    005A: B0 07                                 MOV AL, 00000111B  ;Displaying 7
+[  69]    005C: BA 00 00                              MOV DX, PORTA
+[  70]    005F: EE                                    OUT DX,AL
+[  71]    0060: B9 36 DF                              MOV CX,0DF36H; Delay
+[  72]    0063: E2 FE                                 Delay7:loop Delay7
+[  73]        :                                       
+[  74]    0065: B0 7F                                 MOV AL, 01111111B  ;Displaying 8
+[  75]    0067: BA 00 00                              MOV DX, PORTA
+[  76]    006A: EE                                    OUT DX,AL
+[  77]    006B: B9 36 DF                              MOV CX,0DF36H; Delay
+[  78]    006E: E2 FE                                 Delay8:loop Delay8
+[  79]        :                                       
+[  80]    0070: B0 6F                                 MOV AL, 01101111B      ; Displaying 9
+[  81]    0072: BA 00 00                              MOV DX, PORTA
+[  82]    0075: EE                                    OUT DX,AL
+[  83]    0076: B9 36 DF                              MOV CX,0DF36H; Delay
+[  84]        :                                       
+[  85]    0079: E2 FE                                 Delay9:loop Delay9
+[  86]        :                                       
+[  87]    007B: EB 90                                 JMP XX
+[  88]        :                                       
+[  89]        :                                       
+[  90]        :                                       
+[  91]    007D: EB 86                                 JMP START
+[  92]        :                                       
+[  93]        :                                       
+[  94]        :                                       CODE ENDS
+[  95]        :                                       END
+[  96]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
