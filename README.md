@@ -12,3 +12,5 @@ Screenshots: Visuals of the actual setup are provided to enhance understanding.
 In-depth Address Pin Analysis: Understand how address pins function in minimum mode for effective hardware control.
 Memory and Hardware Integration: Explore the types of memory and hardware required to support the timer, offering a hands-on approach to learning microprocessor-based design.
 Documentation: Comprehensive report with diagrams and screenshots to guide learners through the 8086’s operation and timer implementation.
+
+![image](https://github.com/user-attachments/assets/fa7d39f4-1c12-464a-8bc8-426ab2facf10)
